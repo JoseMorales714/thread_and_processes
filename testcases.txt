@@ -1,0 +1,121 @@
+1: ./main 4 process 1 , this is valid 
+valid thread/pattern
+Creating: Process
+valid num_of_things
+valid pattern: 1
+(2nd fork) Creating thread #0, PID: 23
+(2nd fork) Creating thread #1, PID: 24
+(2nd fork) Creating thread #2, PID: 25
+(2nd fork) Creating thread #3, PID: 26
+Process #0 terminated
+Process #1 terminated
+Process #2 terminated
+Process #3 terminated
+
+exe
+
+2: ./main 4 process 2 , this is valid
+valid thread/pattern
+Creating: Process
+valid num_of_things
+valid pattern: 2
+
+This is parent process 27
+Creating thread #1 PID: 27
+Sleepng for 8 seconds
+This is parent process 28
+Creating thread #2 PID: 28
+Sleepng for 7 seconds
+This is parent process 29
+Creating thread #3 PID: 29
+Sleepng for 2 seconds
+This is parent process 30
+Creating thread #4 PID: 30
+Sleepng for 4 seconds
+
+exe
+
+3: ./main 5 thread 1 , this s valid 
+valid thread/pattern
+Creating: Thread
+valid num_of_things
+valid pattern: 1
+THREAD 1111
+Main TID: 33
+Thread #1 starting
+New thread with pid: 34
+Thread #2 starting
+New thread with pid: 35
+Thread #3 starting
+New thread with pid: 36
+Thread #4 starting
+New thread with pid: 37
+Thread #5 starting
+New thread with pid: 38
+Joined 1 and terminated.
+Joined 2 and terminated.
+Joined 3 and terminated.
+Joined 4 and terminated.
+Joined 5 and terminated.
+
+exe
+
+4: ./main 5 thread 2 , ths is valid 
+valid thread/pattern
+Creating: Thread
+valid num_of_things
+valid pattern: 2
+THREAD 22222
+START sec PATH
+Thread #2 starting
+New thread with pid: 1035
+
+exe
+Thread #5 starting
+Thread #5 starting
+New thread with pid: 1038
+
+5: ./main 0 thread 1 , this is invald since number of threads is 0 which is out of range
+valid thread/pattern
+Creating: Thread
+Syntax:
+ ./main <optional -h> <optional -help> <int 1-256> <only valid entries 'thread' or 'process'> <requiered pattern number '1' or '2?
+------Example------
+./main -h
+ ./main -help
+ ./main -d 25 thread 1
+ ./main 30 process 2
+invalid num_of_things range
+
+6: ./main -h
+Syntax:
+ ./main <optional -h> <optional -help> <int 1-256> <only valid entries 'thread' or 'process'> <requiered pattern number '1' or '2?
+------Example------
+./main -h
+ ./main -help
+ ./main -d 25 thread 1
+ ./main 30 process 2
+help cmd was triggered
+
+7: ./main process 1 2, this is the wrong formate for executon 
+Syntax:
+ ./main <optional -h> <optional -help> <int 1-256> <only valid entries 'thread' or 'process'> <requiered pattern number '1' or '2?
+------Example------
+./main -h
+ ./main -help
+ ./main -d 25 thread 1
+ ./main 30 process 2
+invalid thread/pattern number
+
+8: ./main -help
+Syntax:
+ ./main <optional -h> <optional -help> <int 1-256> <only valid entries 'thread' or 'process'> <requiered pattern number '1' or '2?
+------Example------
+./main -h
+ ./main -help
+ ./main -d 25 thread 1
+ ./main 30 process 2
+help cmd was triggered
+
+9: ./main -10 process 1
+this is our of the range for threads so it will display ./main -h
